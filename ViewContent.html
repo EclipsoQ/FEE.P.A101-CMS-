@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>View Content</title>
+    <!-- Font Awesome -->   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->    
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top border border-secondary-subtle">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">CMS</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                    <i class="fa-solid fa-user"></i>                
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                        <a href="#" class="dropdown-item">
+                            <i class="fa-solid fa-user"></i>
+                            <span>User Profile</span>
+                        </a>                    
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <a href="#" class="dropdown-item">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>        
+    </nav>     
+
+    <!-- Content-->   
+    <div class="container-fluid p-0">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-2 d-none d-md-block">
+                <div class="sidebar border border-secondary-subtle">
+                    <div class="sidebar-sticky">
+                        <ul class="nav flex-column">
+                            <li class="nav-item border-bottom">
+                                <div class="input-group p-2">
+                                    <input type="text" class="form-control" placeholder="Search...">
+                                    <span class="input-group-text">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="nav-item border-bottom bg-secondary-subtle">
+                                <a class="nav-link" href="/ViewContent.html">
+                                    <i class="fa-solid fa-table-cells"></i>
+                                    View contents
+                                </a>
+                            </li>                
+                            <li class="nav-item border-bottom">
+                                <a class="nav-link" href="/FormContent.html">
+                                    <i class="fas fa-edit"></i>
+                                    Form content
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div> 
+            </div>  
+            
+            <!-- Content -->
+            <div class="col-md-9 ml-sm-auto col-lg-10 px-lg-5 content">
+                <h1 class="mt-3">View Content</h1>
+                <hr>
+                <div class="card">
+                    <div class="card-header">
+                        <span>View Content List</span>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped table-bordered"> 
+                            <thead>
+                                <tr>
+                                    <th scope="col" style="width: 1em;">#</th>
+                                    <th scope="col" style="width: 15em;">Title</th>
+                                    <th scope="col" style="width: 48em;">Brief</th>
+                                    <th scope="col">Created Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        1
+                                    </td>
+                                    <td>Lorem ipsum dolor sit amet</td>
+                                    <td>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+                                    <td>2024/10/11 20:42:18</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2
+                                    </td>
+                                    <td>At vero eos et accusamus et iusto</td>
+                                    <td>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo </td>
+                                    <td>2024/12/02 09:27:56</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        3
+                                    </td>
+                                    <td>Sed ut perspiciatis unde omnis</td>
+                                    <td>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</td>
+                                    <td>2024/10/23 22:42:54</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>        
+
+    <!-- JQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Bootstrap JS with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>
