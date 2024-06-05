@@ -3,6 +3,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     let submitBtn = this.getElementById("btn");
     submitBtn.addEventListener("click", function(e) {                                    
+        // Prevent default form submission
         e.preventDefault();
                         
         // Email validation
