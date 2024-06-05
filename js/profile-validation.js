@@ -39,7 +39,7 @@ $(document).ready(function() {
         if (description.length > 200) {
             $("#descriptionVal").text("Description must not exceed 200 chars"); 
             $("#description").focus();
-        }        
+        }                                
     });
     
 });
