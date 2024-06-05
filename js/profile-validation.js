@@ -4,10 +4,10 @@ $(document).ready(function() {
         // Prevent default form submission        
         event.preventDefault();        
 
-        const firstName = $("#firstName").val();        
-        const lastName = $("#lastName").val();
-        const phone = $("#phone").val();
-        const description = $("#description").val();
+        const firstName = $.trim($("#firstName").val());       
+        const lastName = $.trim($("#lastName").val())
+        const phone = $.trim($("#phone").val())
+        const description = $.trim($("#description").val())
 
         if (firstName.length > 30) {
             $("#firstNameVal").text("First name must not exceed 30 chars"); 
