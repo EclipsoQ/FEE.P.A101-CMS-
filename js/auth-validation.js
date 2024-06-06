@@ -5,6 +5,11 @@ document.addEventListener("DOMContentLoaded", function() {
     submitBtn.addEventListener("click", function(e) {                                    
         // Prevent default form submission
         e.preventDefault();
+
+        $("#emailVal").text("");
+        $("#userNameVal").text("");
+        $("#passwordVal").text("");
+        $("#rePasswordVal").text("");
                         
         // Email validation
         let email = document.getElementById("email").value.trim();        
@@ -12,8 +17,11 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("emailVal").innerText = "Email must not exceed 50 chars";
         }
         if (email.length < 5) {
-        document.getElementById("emailVal").innerText = "Email must be 5 chars min";
+            document.getElementById("emailVal").innerText = "Email must be 5 chars min";
         } 
+        if (!validateEmail(email)) {
+            document.getElementById("emailVal").innerText = "Invalid email format";
+        }
 
         // Password validation
         let password = document.getElementById("password").value.trim();
@@ -22,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         if (password.length < 8) {
             document.getElementById("passwordVal").innerText = "Password must be 8 chars min";
-        } 
+        }         
 
         // Re Password validation
         let rePassword = document.getElementById("rePassword").value.trim();
@@ -44,6 +52,10 @@ document.addEventListener("DOMContentLoaded", function() {
         if (userName.length < 3) {
             document.getElementById("nameVal").innerText = "Username must be 3 chars min";
         } 
-                        
+        
+        function validateEmail(email) {
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return emailPattern.test(email);
+        }
     });
 });

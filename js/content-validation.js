@@ -6,6 +6,10 @@ $(document).ready(function () {
         const brief = $.trim($("#brief").val());
         const content = $.trim($("#content").val());
 
+        $("#titleVal").text("");
+        $("#briefVal").text("");
+        $("#contentVal").text("");
+
         if (title.length > 200) {
             $("#titleVal").text("Title must not exceed 200 chars"); 
             $("#title").focus();
