@@ -11,7 +11,7 @@
 </head>
 <body>
     <!-- Navbar -->    
-    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top border border-secondary-subtle">
+    <nav class="navbar navbar-expand-lg bg-secondary-subtle fixed-top border border-secondary-subtle">
         <div class="container-fluid">
             <a href="#" class="navbar-brand">CMS</a>
             <div class="nav-item dropdown">
@@ -38,33 +38,33 @@
     </nav>     
 
     <!-- Content-->   
-    <div class="container-fluid p-0">
+    <div class="container-fluid mb-3">
         <div class="row">
             <!-- Sidebar -->
-            <div class="col-md-2 d-none d-md-block">
-                <div class="sidebar border border-secondary-subtle">
+            <div class="col-md-2 p-0 bg-secondary-subtle" style="margin-top: 56px;">
+                <div class="border">
                     <div class="sidebar-sticky">
                         <ul class="nav flex-column">
-                            <li class="nav-item border-bottom">
+                            <li class="nav-item border-bottom border-secondary-subtle">
                                 <div class="input-group p-2">
-                                    <input type="text" class="form-control" placeholder="Search...">
-                                    <span class="input-group-text">
+                                    <input type="text" class="form-control border-secondary-subtle" placeholder="Search...">
+                                    <span class="input-group-text border-secondary-subtle">
                                         <i class="fa-solid fa-magnifying-glass"></i>
                                     </span>
                                 </div>
                             </li>
-                            <li class="nav-item border-bottom bg-secondary-subtle">
-                                <a class="nav-link" href="/ViewContent.html">
+                            <li class="nav-item border-bottom border-secondary-subtle">
+                                <a class="nav-link active" href="/ViewContent.html">
                                     <i class="fa-solid fa-table-cells"></i>
                                     View contents
                                 </a>
                             </li>                
-                            <li class="nav-item border-bottom">
+                            <li class="nav-item border-bottom border-secondary-subtle">
                                 <a class="nav-link" href="/FormContent.html">
                                     <i class="fas fa-edit"></i>
                                     Form content
                                 </a>
-                            </li>
+                            </li>                            
                         </ul>
                     </div>
                 </div> 
@@ -72,7 +72,7 @@
             
             
             <!-- Content -->
-            <div class="col-md-9 ml-sm-auto col-lg-10 px-lg-5 content">
+            <div class="col-md-9 col-lg-10 px-lg-5 content">
                 <!-- Loading screen -->
                 <div id="loadingScreen">
                     <span class="h2">Loading....</span> 
@@ -98,31 +98,7 @@
                                         <th scope="col">Created Date</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            1
-                                        </td>
-                                        <td>Lorem ipsum dolor sit amet</td>
-                                        <td>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-                                        <td>2024/10/11 20:42:18</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            2
-                                        </td>
-                                        <td>At vero eos et accusamus et iusto</td>
-                                        <td>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo </td>
-                                        <td>2024/12/02 09:27:56</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            3
-                                        </td>
-                                        <td>Sed ut perspiciatis unde omnis</td>
-                                        <td>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</td>
-                                        <td>2024/10/23 22:42:54</td>
-                                    </tr>
+                                <tbody id="contentTable">                                    
                                 </tbody>
                             </table>
                         </div>
@@ -132,6 +108,8 @@
         </div>
     </div>        
 
+    <!-- JS Cookie -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <!-- JQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Bootstrap JS with Popper -->
@@ -139,5 +117,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <!-- Loading Screen -->
     <script src="/js/loading-screen.js"></script>
+    <!-- Load Contents -->
+    <script>
+        let contents = JSON.parse(Cookies.get('contents'));
+        let i = 1;
+        contents.forEach(content => {
+            let row = $('<tr></tr>');
+            let titleData = $('<td></td>').text(content.title);
+            let briefData = $('<td></td>').text(content.brief);
+            let dateData = $('<td></td>').text(content.createdDate);
+            row.append($('<td></td>').text(i));
+            row.append(titleData);
+            row.append(briefData);
+            row.append(dateData);
+            $("#contentTable").append(row);
+            i++;
+        });
+        
+    </script>
 </body>
 </html>
