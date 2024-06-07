@@ -118,22 +118,6 @@
     <!-- Loading Screen -->
     <script src="/js/loading-screen.js"></script>
     <!-- Load Contents -->
-    <script>
-        let contents = JSON.parse(Cookies.get('contents'));
-        let i = 1;
-        contents.forEach(content => {
-            let row = $('<tr></tr>');
-            let titleData = $('<td></td>').text(content.title);
-            let briefData = $('<td></td>').text(content.brief);
-            let dateData = $('<td></td>').text(content.createdDate);
-            row.append($('<td></td>').text(i));
-            row.append(titleData);
-            row.append(briefData);
-            row.append(dateData);
-            $("#contentTable").append(row);
-            i++;
-        });
-        
-    </script>
+    <script src="js/load-contents.js"></script>
 </body>
 </html>
